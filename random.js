@@ -5,15 +5,25 @@ var namespace = "http://www.w3.org/2000/svg"
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createFirstScene() {
-    
+    makeRect(0, 0, 500, 500,"green", 1)
+    makeCircle(70, 60, 8, "yellow",0.65)
+    makeRect(78, 60, 30,2,"yellow", 1)
+    makeRect(60, 66, 90, 15,"blue",0.65)
+    makeLine(50, 20, 100, 300,"red", 2, 1)
+    makeLine(50, 80, 180, 80,"red", 2, 1)
+    makeLine(150, 100, 150, 20,"red", 2, 1)
+    makeRect(82, 60, 60, 20,"pink", 1)
 }
-
 
 // Fill in this function so that it draws something using SVG shapes!
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createSecondScene() {
-    
+    makeRect(0, 0, 500, 500,"white", 1)
+    makeCircle(100, 50, 50,"bisque", 1)
+    makeCircle(100, 50, 40, "green", 1)
+    makeCircle(100, 50, 30, "violet", 1)
+    makeCircle(100, 50, 20, "lightblue", 1)
 }
 
 
@@ -21,7 +31,10 @@ function createSecondScene() {
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createThirdScene() {
-    
+    makeRect(0, 0, 500, 500,"aqua", 1)
+    makeEllipse(100, 50, 100, 50, "olive", 0.7)
+    makeCircle(100, 50, 50,"white", 0.4)
+    makeImage("http://livehdwallpaper.com/wp-content/uploads/2015/04/Birds-and-Flowers-Wallpaper.jpg", 73, 28, 55, 40, 0.7)
 }
 
 
@@ -32,20 +45,22 @@ function createThirdScene() {
 // This function is called whenever you press the "Go!" button.
 function createRandomScene() {
     // Generate a random number between 0 and 1, and store it in a variable.
-    
+    var rando = Math.random()
     // If the number is less than 0.33, call the function to create your first scene.
-    
-    
-    
+    if (rando < 0.33) {
+        createFirstScene();
     // Else, if the number is less than 0.67, call the function to create your second scene.
-    
-    
-    
+    } else { 
+        if (rando < 0.67) {
+            createSecondScene();
     // Else, call the function to create your third scene.
-    
-    
-    
+    } else {
+        rando 
+            createThirdScene();
+        }
+    }  
 }
+
 
 
 
